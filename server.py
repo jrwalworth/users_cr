@@ -1,27 +1,31 @@
 
-from flask import Flask, render_template, request, redirect
+from flask import render_template, request, redirect
 from app.models.user import User
 
-app = Flask(__name__)
+from app import app
 
 #home - landing page
 @app.route('/users')
 def index():
     users = User.get_all()
     print(users)
-    return render_template('index.html', all_users = users)
+    return render_template('index.html', all_users=users)
 
-#create user method to add to DB
-@app.route('/users/new', methods=["POST"])
-def create_user():
+##route page to add new user
+@app.route('/users/new')
+def new():
+    return render_template('new.html')
+
+#Add user method to add to DB
+@app.route('/users/add', methods=["POST"])
+def add_user():
     data = {
         "fname" : request.form["fname"], 
         "lname" : request.form["lname"],
-        "occ" : request.form["occ"]
+        "email" : request.form["email"]
     }
     User.save(data)
-    return redirect('/')
-
+    return redirect('/users')
 
 
 if __name__ == "__main__":

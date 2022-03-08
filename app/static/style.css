@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 800px;
+}
+
+.header {
+    margin-left: 150px;
+}
+
+.f-header {
+    margin-left: 150px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tarea {
+    margin-top: 20px;
+    margin-left: 150px;
+    width: 650px;
+}
+
+.link{
+    margin-left: 150px;
+}
+
+.f-main {
+    width: 500px;
+    margin-left: 150px;
+}
