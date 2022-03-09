@@ -1,4 +1,13 @@
 # users_cr
-Flask + MySQL simple create and read.
+Flask + MySQL
 
-Will continue to add to this simple app as we progress through the next few weeks of the Python Stack at Coding Dojo.
+Overview:
+Simple flask app connecting to mySQL database. 
+
+Steps: 
+1. Get all Users
+2. Add new User 
+3. Edit User
+4. Delete User
+
+

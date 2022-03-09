@@ -17,11 +17,13 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
+                    <!-- use for loop for selected data? -->
                     <th>ID</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
                     <th>Created At</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +34,11 @@
                         <td>{{u.last_name}}</td>
                         <td>{{u.email}}</td>
                         <td>{{u.created_at}}</td>
+                        <td id="action_links">
+                            <a href="/users/{{u.id}}/show">Show</a>
+                            <a href="/users/{{u.id}}/edit">Edit</a>
+                            <a href="/users/{{u.id}}/delete">Delete</a>
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>

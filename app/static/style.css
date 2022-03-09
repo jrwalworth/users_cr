@@ -15,12 +15,12 @@ body {
     margin-left: 150px;
     display:flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
 }
 .tarea {
     margin-top: 20px;
     margin-left: 150px;
-    width: 650px;
+    width: 700px;
 }
 
 .link{
@@ -28,6 +28,14 @@ body {
 }
 
 .f-main {
-    width: 500px;
+    width: 800px;
     margin-left: 150px;
+}
+
+#action_links {
+    width: 200px;
+}
+
+.card {
+    width: 450px;
 }
