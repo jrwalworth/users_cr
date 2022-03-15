@@ -1,4 +1,4 @@
-# users_cr
+# Users CRUD
 Flask + MySQL
 
 Overview:
@@ -6,8 +6,9 @@ Simple flask app connecting to mySQL database.
 
 Steps: 
 1. Get all Users
-2. Add new User 
-3. Edit User
-4. Delete User
+2. Get one User
+3. Add new User 
+4. Edit User
+5. Delete User
 
 

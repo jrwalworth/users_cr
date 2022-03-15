@@ -10,21 +10,21 @@
 </head>
 <body>
     <div class="f-header">
-        <h1>Edit User: </h1>
+        <h1>Edit User: {{e_user.id}}</h1>
         <div class="link">
-            <a href="/users">Home</a>
+            <a href="/">Home</a>
         </div>
     </div>
 
     <div class="f-main">
-        <form action="/users/<int:id>/edit>" method="POST">
+        <form action="/users/{{e_user.id}}/update" method="POST">
             <label class="form-label" for="fname">First Name:</label>
-            <input class="form-control mb-3" type="text" name="fname">
+            <input class="form-control mb-3" type="text" name="fname" value="{{e_user.first_name}}">
             <label class="form-label" for="lname">Last Name:</label>
-            <input class="form-control mb-3" type="text" name="lname">
+            <input class="form-control mb-3" type="text" name="lname" value="{{e_user.last_name}}">
             <label class="form-label" for="email" >Email:</label>
-            <input class="form-control mb-3" type="text" name="email">
-            <input class="btn btn-primary"type="submit" value="Create">
+            <input class="form-control mb-3" type="text" name="email" value="{{e_user.email}}">
+            <input class="btn btn-primary" type="submit" value="Update">
         </form>
     </div>
 

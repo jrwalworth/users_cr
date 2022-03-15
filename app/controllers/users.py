@@ -5,7 +5,7 @@ from app import app
 #root route
 @app.route('/')
 def index():
-    redirect('/users')
+    return redirect('/users')
 
 #All Users page
 @app.route('/users')
@@ -43,13 +43,24 @@ def show_user(id):
 @app.route('/users/<int:id>/edit')
 def edit_user(id):
     data = {
+        "id": id,
+    }
+    #User.update(data)
+    user = User.get_one(data)
+    return render_template('edit_user.html', e_user=user)
+
+#Update user in DB
+@app.route('/users/<int:id>/update', methods=['POST'])
+def update_db(id):
+    data = {
+        "id": id,
         "fname": request.form["fname"],
         "lname": request.form["lname"],
         "email": request.form["email"]
     }
     User.update(data)
-    return render_template('edit_user.html')
-
+    #must use f string if you pass in a parameter to redirect.
+    return redirect(f'/users/{id}/show')
 
 #Delete user
 @app.route('/users/<int:id>/delete')
